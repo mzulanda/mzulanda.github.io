@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>muchi_tina - 官方视频门户_原创影像品牌</title>
+<meta name="description" content="muchi_tina 官方网站，专注原创影像与生活方式内容的企业级视频品牌平台，汇聚创作者社区与精品内容，持续运营的高品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f6f6a'/%3E%3Cpath d='M24 19l20 13-20 13z' fill='%23f4e9d8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mt-teal:#2f6f6a;
+  --mt-teal-deep:#1f4a47;
+  --mt-teal-soft:#e3efed;
+  --mt-sand:#f4e9d8;
+  --mt-sand-deep:#e6d3b8;
+  --mt-ink:#1c2726;
+  --mt-ink-soft:#4a5b59;
+  --mt-line:#d5e0de;
+  --mt-white:#fdfdfb;
+  --mt-glow:#e8a33d;
+  --mt-radius:14px;
+  --mt-shadow:0 10px 30px rgba(31,74,71,.10);
+  --mt-sticky:118px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--mt-sticky) + 8px)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--mt-white);
+  color:var(--mt-ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--mt-teal);text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.mt-shell{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.mt-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- 吸顶公告 + 页头 ---------- */
+.mt-sticky-wrap{position:sticky;top:0;z-index:80}
+.mt-announce{
+  background:linear-gradient(90deg,var(--mt-teal-deep),var(--mt-teal));
+  color:var(--mt-sand);
+  font-size:13.5px;
+  letter-spacing:.2px;
+}
+.mt-announce-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:8px 22px;max-width:1180px;margin:0 auto;
+  overflow:hidden;
+}
+.mt-announce-tag{
+  flex:0 0 auto;background:var(--mt-glow);color:#3a2400;
+  font-weight:700;font-size:11.5px;padding:2px 9px;border-radius:20px;letter-spacing:1px;
+}
+.mt-announce-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto;min-width:0}
+.mt-announce-link{flex:0 0 auto;color:#fff;font-size:12.5px;border-bottom:1px dashed rgba(255,255,255,.55);padding-bottom:1px}
+
+.mt-header{
+  background:rgba(253,253,251,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--mt-line);
+}
+.mt-header-inner{
+  display:flex;align-items:center;gap:26px;
+  padding:14px 22px;max-width:1180px;margin:0 auto;
+}
+.mt-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.mt-brand-mark{
+  width:40px;height:40px;border-radius:11px;
+  background:linear-gradient(135deg,var(--mt-teal),var(--mt-teal-deep));
+  display:grid;place-items:center;color:var(--mt-sand);font-weight:800;font-size:17px;
+  box-shadow:0 6px 14px rgba(47,111,106,.30);
+}
+.mt-brand-name{font-size:19px;font-weight:800;letter-spacing:.3px;color:var(--mt-teal-deep);line-height:1.2}
+.mt-brand-sub{font-size:10.5px;letter-spacing:2px;color:var(--mt-ink-soft);text-transform:uppercase}
+.mt-nav{display:flex;gap:4px;flex:1 1 auto;min-width:0;flex-wrap:wrap}
+.mt-nav a{
+  font-size:14.5px;color:var(--mt-ink-soft);padding:7px 12px;border-radius:8px;
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.mt-nav a:hover{background:var(--mt-teal-soft);color:var(--mt-teal-deep)}
+.mt-header-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.mt-search{position:relative;display:flex;align-items:center}
+.mt-search input{
+  width:210px;padding:9px 34px 9px 14px;border-radius:22px;border:1px solid var(--mt-line);
+  background:#fff;font-size:13.5px;color:var(--mt-ink);outline:none;transition:border .2s,box-shadow .2s;
+}
+.mt-search input:focus{border-color:var(--mt-teal);box-shadow:0 0 0 3px rgba(47,111,106,.14)}
+.mt-search-btn{position:absolute;right:6px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--mt-teal)}
+.mt-search-hint{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1px solid var(--mt-line);
+  border-radius:10px;box-shadow:var(--mt-shadow);padding:8px;font-size:13px;display:none;z-index:95;
+}
+.mt-search-hint.open{display:block}
+.mt-search-hint p{padding:6px 8px;color:var(--mt-ink-soft);border-radius:6px}
+.mt-search-hint p:hover{background:var(--mt-teal-soft);color:var(--mt-teal-deep)}
+.mt-search-hint .mt-hint-empty{color:#a7562f;font-size:12.5px}
+.mt-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:10px 20px;border-radius:22px;font-size:14px;font-weight:600;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.mt-btn-primary{background:var(--mt-teal);color:#fff;box-shadow:0 6px 16px rgba(47,111,106,.28)}
+.mt-btn-primary:hover{background:var(--mt-teal-deep);transform:translateY(-1px)}
+.mt-btn-ghost{border:1.5px solid var(--mt-teal);color:var(--mt-teal-deep);background:transparent}
+.mt-btn-ghost:hover{background:var(--mt-teal-soft)}
+.mt-btn-sand{background:var(--mt-sand);color:var(--mt-teal-deep);border:1px solid var(--mt-sand-deep)}
+.mt-btn-sand:hover{background:var(--mt-sand-deep)}
+.mt-burger{display:none;width:40px;height:40px;border-radius:9px;border:1px solid var(--mt-line);place-items:center;color:var(--mt-teal-deep)}
+.mt-burger span{display:block;width:18px;height:2px;background:currentColor;margin:3.5px 0;border-radius:2px}
+
+/* ---------- 首屏 6:4 ---------- */
+.mt-hero{padding:52px 0 58px;background:
+  radial-gradient(900px 420px at 88% -10%,rgba(232,163,61,.16),transparent 62%),
+  linear-gradient(180deg,#f7faf9,#fdfdfb 72%);
+  border-bottom:1px solid var(--mt-line);
+}
+.mt-hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:44px;align-items:center}
+.mt-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:2px;
+  color:var(--mt-teal-deep);background:var(--mt-teal-soft);padding:6px 14px;border-radius:20px;margin-bottom:20px;
+}
+.mt-hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mt-glow)}
+.mt-hero h1{
+  font-size:clamp(38px,5.6vw,62px);line-height:1.08;letter-spacing:-1px;font-weight:800;
+  color:var(--mt-teal-deep);margin-bottom:16px;
+}
+.mt-hero h1 em{font-style:normal;color:var(--mt-glow)}
+.mt-hero-lead{font-size:17px;color:var(--mt-ink-soft);max-width:46ch;margin-bottom:14px}
+.mt-hero-desc{font-size:15px;color:var(--mt-ink-soft);max-width:52ch;margin-bottom:26px}
+.mt-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.mt-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:520px}
+.mt-stat{background:#fff;border:1px solid var(--mt-line);border-radius:var(--mt-radius);padding:14px 16px}
+.mt-stat b{display:block;font-size:24px;line-height:1.2;color:var(--mt-teal-deep);font-weight:800}
+.mt-stat span{font-size:12.5px;color:var(--mt-ink-soft)}
+.mt-hero-visual{position:relative}
+.mt-hero-visual .mt-hero-img{
+  border-radius:20px;overflow:hidden;box-shadow:0 26px 60px rgba(31,74,71,.22);aspect-ratio:4/5;
+}
+.mt-hero-visual .mt-hero-img img{width:100%;height:100%;object-fit:cover}
+.mt-hero-badge{
+  position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:14px;padding:12px 16px;
+  box-shadow:var(--mt-shadow);display:flex;align-items:center;gap:10px;border:1px solid var(--mt-line);
+}
+.mt-hero-badge .mt-play-dot{
+  width:34px;height:34px;border-radius:50%;background:var(--mt-teal);display:grid;place-items:center;color:#fff;font-size:13px;
+}
+.mt-hero-badge b{font-size:13.5px;display:block;color:var(--mt-teal-deep)}
+.mt-hero-badge small{font-size:11.5px;color:var(--mt-ink-soft)}
+
+/* ---------- section 通用 ---------- */
+.mt-section{padding:64px 0;border-bottom:1px solid var(--mt-line)}
+.mt-section:nth-of-type(even){background:#f8fbfa}
+.mt-section-head{margin-bottom:34px;max-width:760px}
+.mt-section-kicker{font-size:12.5px;font-weight:700;letter-spacing:2.5px;color:var(--mt-glow);text-transform:uppercase;margin-bottom:8px}
+.mt-section-head h2{font-size:clamp(25px,3.2vw,34px);line-height:1.22;color:var(--mt-teal-deep);letter-spacing:-.4px}
+.mt-section-head p{margin-top:10px;color:var(--mt-ink-soft);font-size:15px}
+.mt-h3{font-size:19px;font-weight:700;color:var(--mt-teal-deep);margin-bottom:8px;line-height:1.4}
+
+/* ---------- 视频区：一幅重点大图 + 文字列表 ---------- */
+.mt-video-wrap{display:grid;grid-template-columns:5fr 7fr;gap:34px;align-items:start}
+.mt-video-feature{
+  background:#fff;border:1px solid var(--mt-line);border-radius:18px;overflow:hidden;
+  box-shadow:var(--mt-shadow);
+}
+.mt-video-feature-img{aspect-ratio:16/9;overflow:hidden;position:relative}
+.mt-video-feature-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.mt-video-feature:hover .mt-video-feature-img img{transform:scale(1.04)}
+.mt-play-float{
+  position:absolute;inset:auto auto 14px 14px;background:rgba(28,39,38,.72);color:#fff;
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:6px 12px;border-radius:20px;backdrop-filter:blur(4px);
+}
+.mt-video-feature-body{padding:20px 22px 22px}
+.mt-tag{
+  display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.4px;color:var(--mt-teal-deep);
+  background:var(--mt-teal-soft);padding:3px 10px;border-radius:20px;margin:0 6px 8px 0;
+}
+.mt-video-feature-body p{font-size:14px;color:var(--mt-ink-soft);margin:6px 0 14px}
+.mt-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--mt-ink-soft);align-items:center}
+.mt-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.mt-act{
+  display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:7px 13px;border-radius:20px;
+  border:1px solid var(--mt-line);background:#fff;color:var(--mt-ink-soft);transition:all .18s;
+}
+.mt-act:hover{border-color:var(--mt-teal);color:var(--mt-teal-deep)}
+.mt-act.on{background:var(--mt-teal-soft);border-color:var(--mt-teal);color:var(--mt-teal-deep);font-weight:600}
+
+.mt-video-list{display:flex;flex-direction:column;gap:14px}
+.mt-video-item{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start;
+  background:#fff;border:1px solid var(--mt-line);border-radius:14px;padding:16px 18px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.mt-video-item:hover{transform:translateY(-2px);box-shadow:var(--mt-shadow);border-color:#bcd4d0}
+.mt-video-num{
+  width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--mt-sand),#fff);
+  display:grid;place-items:center;font-size:19px;font-weight:800;color:var(--mt-teal-deep);border:1px solid var(--mt-sand-deep);
+}
+.mt-video-item h3{font-size:16.5px;color:var(--mt-ink);line-height:1.45;margin-bottom:4px}
+.mt-video-item p{font-size:13.5px;color:var(--mt-ink-soft);margin-bottom:8px}
+.mt-video-item .mt-meta{font-size:12px;gap:12px}
+
+/* ---------- 深度解析 ---------- */
+.mt-deep-intro{
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:30px;
+}
+.mt-deep-intro p{font-size:15.5px;color:var(--mt-ink-soft);margin-bottom:14px}
+.mt-deep-figure{border-radius:16px;overflow:hidden;border:1px solid var(--mt-line);box-shadow:var(--mt-shadow)}
+.mt-deep-figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.mt-deep-figure figcaption{font-size:12.5px;color:var(--mt-ink-soft);padding:10px 14px;background:#fff}
+.mt-deep-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 34px}
+.mt-deep-block{background:#fff;border:1px solid var(--mt-line);border-radius:16px;padding:24px 26px}
+.mt-deep-block p{font-size:14.5px;color:var(--mt-ink-soft);margin-bottom:12px}
+.mt-deep-block p:last-child{margin-bottom:0}
+
+/* ---------- 专题 ---------- */
+.mt-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.mt-topic{
+  background:#fff;border:1px solid var(--mt-line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.mt-topic:hover{transform:translateY(-3px);box-shadow:var(--mt-shadow)}
+.mt-topic-head{padding:20px 22px 14px;background:linear-gradient(160deg,var(--mt-teal-soft),#fff)}
+.mt-topic-head h3{font-size:17.5px;color:var(--mt-teal-deep);margin-bottom:6px}
+.mt-topic-head p{font-size:13.5px;color:var(--mt-ink-soft)}
+.mt-topic-status{
+  display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--mt-teal-deep);
+  margin-top:10px;
+}
+.mt-topic-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mt-glow)}
+.mt-topic-list{padding:8px 22px 22px;display:flex;flex-direction:column;gap:0;flex:1}
+.mt-topic-list li{
+  font-size:13.5px;color:var(--mt-ink-soft);padding:9px 0;border-bottom:1px dashed var(--mt-line);
+  display:flex;gap:9px;align-items:baseline;
+}
+.mt-topic-list li:last-child{border-bottom:none}
+.mt-topic-list li span{font-size:11.5px;color:var(--mt-glow);font-weight:700;flex:0 0 auto}
+
+/* ---------- 作者矩阵：双列简介 ---------- */
+.mt-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.mt-author{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;
+  background:#fff;border:1px solid var(--mt-line);border-radius:16px;padding:22px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.mt-author:hover{border-color:#bcd4d0;box-shadow:var(--mt-shadow)}
+.mt-avatar{
+  width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  font-size:23px;font-weight:800;color:#fff;letter-spacing:0;
+}
+.mt-avatar.a1{background:linear-gradient(135deg,#2f6f6a,#4f9d95)}
+.mt-avatar.a2{background:linear-gradient(135deg,#c2792f,#e8a33d)}
+.mt-avatar.a3{background:linear-gradient(135deg,#5b5f97,#8c90c4)}
+.mt-avatar.a4{background:linear-gradient(135deg,#7a4b3a,#b07a63)}
+.mt-avatar.a5{background:linear-gradient(135deg,#346b52,#5fa27c)}
+.mt-author-name{font-size:16.5px;font-weight:700;color:var(--mt-ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mt-author-field{font-size:12.5px;color:var(--mt-teal-deep);background:var(--mt-teal-soft);padding:1px 9px;border-radius:14px;font-weight:600}
+.mt-author-nums{font-size:12.5px;color:var(--mt-ink-soft);margin:5px 0 8px;display:flex;gap:14px;flex-wrap:wrap}
+.mt-author-bio{font-size:13.5px;color:var(--mt-ink-soft)}
+.mt-author-more{margin-top:10px;font-size:12.5px;font-weight:600;color:var(--mt-teal);display:inline-flex;align-items:center;gap:5px}
+.mt-author-more:hover{text-decoration:underline}
+
+/* ---------- 评论：双列短评 ---------- */
+.mt-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.mt-review{
+  background:#fff;border:1px solid var(--mt-line);border-radius:14px;padding:18px 20px;
+  border-left:4px solid var(--mt-sand-deep);
+}
+.mt-review:nth-child(3n+1){border-left-color:var(--mt-teal)}
+.mt-review:nth-child(3n+2){border-left-color:var(--mt-glow)}
+.mt-review-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.mt-review-head .mt-avatar{width:34px;height:34px;font-size:14px}
+.mt-review-head b{font-size:13.5px;color:var(--mt-ink)}
+.mt-review-head small{font-size:11.5px;color:var(--mt-ink-soft);display:block;font-weight:400}
+.mt-review p{font-size:13.5px;color:var(--mt-ink-soft)}
+.mt-review-score{font-size:12px;color:var(--mt-glow);letter-spacing:1px;margin-top:8px}
+
+/* ---------- 榜单 ---------- */
+.mt-rank-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.mt-rank{background:#fff;border:1px solid var(--mt-line);border-radius:16px;padding:20px 22px}
+.mt-rank h3{font-size:16px;color:var(--mt-teal-deep);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.mt-rank h3::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--mt-glow)}
+.mt-rank ol{display:flex;flex-direction:column;gap:11px;list-style:none;counter-reset:rk}
+.mt-rank ol li{display:flex;gap:11px;align-items:baseline;font-size:13.5px;color:var(--mt-ink-soft);counter-increment:rk}
+.mt-rank ol li::before{
+  content:counter(rk);font-weight:800;color:var(--mt-teal);font-size:13px;flex:0 0 18px;
+}
+.mt-rank ol li b{color:var(--mt-ink);font-weight:600}
+.mt-rank ol li em{font-style:normal;color:var(--mt-glow);font-size:12px;margin-left:auto;flex:0 0 auto;font-weight:700}
+
+/* ---------- 动态 + FAQ ---------- */
+.mt-two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:34px;align-items:start}
+.mt-news{display:flex;flex-direction:column;gap:14px}
+.mt-news-item{
+  background:#fff;border:1px solid var(--mt-line);border-radius:13px;padding:16px 18px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.mt-news-date{
+  flex:0 0 auto;font-size:12px;font-weight:700;color:var(--mt-teal-deep);background:var(--mt-teal-soft);
+  border-radius:8px;padding:6px 9px;text-align:center;line-height:1.3;
+}
+.mt-news-item b{display:block;font-size:14.5px;color:var(--mt-ink);margin-bottom:3px}
+.mt-news-item p{font-size:13px;color:var(--mt-ink-soft)}
+.mt-faq{display:flex;flex-direction:column;gap:10px}
+.mt-faq details{
+  background:#fff;border:1px solid var(--mt-line);border-radius:12px;padding:4px 18px;
+  transition:border-color .2s;
+}
+.mt-faq details[open]{border-color:#bcd4d0;box-shadow:0 6px 18px rgba(31,74,71,.07)}
+.mt-faq summary{
+  cursor:pointer;padding:13px 0;font-size:14.5px;font-weight:600;color:var(--mt-ink);
+  list-style:none;position:relative;padding-right:28px;
+}
+.mt-faq summary::-webkit-details-marker{display:none}
+.mt-faq summary::after{
+  content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--mt-teal);font-weight:400;transition:transform .2s;
+}
+.mt-faq details[open] summary::after{content:"−"}
+.mt-faq details p{font-size:13.5px;color:var(--mt-ink-soft);padding:0 0 15px}
+
+/* ---------- 合作墙 + 投稿 ---------- */
+.mt-partner-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
+.mt-partner{
+  flex:1 1 160px;background:#fff;border:1px solid var(--mt-line);border-radius:12px;
+  padding:18px 20px;font-size:14px;font-weight:700;color:var(--mt-teal-deep);text-align:center;
+  letter-spacing:.4px;
+}
+.mt-partner small{display:block;font-size:11.5px;color:var(--mt-ink-soft);font-weight:400;margin-top:3px;letter-spacing:0}
+.mt-cta-bar{
+  background:linear-gradient(120deg,var(--mt-teal-deep),var(--mt-teal));border-radius:18px;
+  padding:34px 38px;color:var(--mt-sand);display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;
+}
+.mt-cta-bar h3{font-size:22px;margin-bottom:6px;color:#fff}
+.mt-cta-bar p{font-size:14px;color:rgba(244,233,216,.85);max-width:56ch}
+.mt-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- 页脚 ---------- */
+.mt-footer{background:#16211f;color:#bcc9c6;padding:56px 0 26px;font-size:13.5px}
+.mt-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.10)}
+.mt-footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.mt-footer-brand .mt-brand-mark{box-shadow:none}
+.mt-footer-brand b{font-size:17px;color:#fff;letter-spacing:.3px}
+.mt-footer h4{font-size:13px;color:#fff;letter-spacing:1.5px;margin-bottom:13px;font-weight:700}
+.mt-footer ul{display:flex;flex-direction:column;gap:8px}
+.mt-footer a{color:#bcc9c6}
+.mt-footer a:hover{color:var(--mt-sand)}
+.mt-footer p{font-size:13px;color:#93a3a0;line-height:1.8}
+.mt-footer-bottom{
+  padding-top:22px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:#82928f;
+}
+
+/* ---------- 回到顶部 ---------- */
+.mt-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--mt-teal);color:#fff;display:grid;place-items:center;font-size:17px;
+  box-shadow:0 10px 24px rgba(31,74,71,.34);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:all .25s;z-index:70;
+}
+.mt-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+/* ---------- 弹窗 / toast ---------- */
+.mt-modal{
+  position:fixed;inset:0;background:rgba(22,33,31,.55);backdrop-filter:blur(3px);
+  display:none;place-items:center;z-index:120;padding:20px;
+}
+.mt-modal.open{display:grid}
+.mt-modal-box{
+  background:#fff;border-radius:18px;max-width:460px;width:100%;padding:28px 30px;position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.3);
+}
+.mt-modal-box h3{font-size:19px;color:var(--mt-teal-deep);margin-bottom:10px}
+.mt-modal-box p{font-size:14px;color:var(--mt-ink-soft);margin-bottom:16px}
+.mt-modal-close{position:absolute;top:12px;right:14px;font-size:22px;color:var(--mt-ink-soft);line-height:1}
+.mt-modal-box input,.mt-modal-box textarea{
+  width:100%;border:1px solid var(--mt-line);border-radius:10px;padding:10px 13px;font-size:14px;
+  margin-bottom:12px;font-family:inherit;outline:none;resize:vertical;
+}
+.mt-modal-box input:focus,.mt-modal-box textarea:focus{border-color:var(--mt-teal);box-shadow:0 0 0 3px rgba(47,111,106,.14)}
+.mt-toast{
+  position:fixed;left:50%;bottom:40px;transform:translate(-50%,16px);
+  background:var(--mt-teal-deep);color:#fff;font-size:13.5px;padding:11px 22px;border-radius:24px;
+  opacity:0;visibility:hidden;transition:all .25s;z-index:140;box-shadow:0 12px 30px rgba(0,0,0,.28);
+}
+.mt-toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:980px){
+  :root{--mt-sticky:104px}
+  .mt-hero-grid{grid-template-columns:1fr;gap:34px}
+  .mt-hero-visual{max-width:460px}
+  .mt-video-wrap{grid-template-columns:1fr}
+  .mt-deep-intro{grid-template-columns:1fr}
+  .mt-deep-cols{grid-template-columns:1fr}
+  .mt-topic-grid{grid-template-columns:1fr 1fr}
+  .mt-rank-grid{grid-template-columns:1fr}
+  .mt-two-col{grid-template-columns:1fr}
+  .mt-footer-grid{grid-template-columns:1fr 1fr}
+  .mt-nav{
+    display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+    padding:12px;gap:2px;border-bottom:1px solid var(--mt-line);box-shadow:var(--mt-shadow);
+  }
+  .mt-nav.open{display:flex}
+  .mt-header-inner{position:relative}
+  .mt-burger{display:grid}
+  .mt-search input{width:150px}
+}
+@media (max-width:700px){
+  :root{--mt-sticky:100px}
+  .mt-hero{padding:36px 0 42px}
+  .mt-section{padding:46px 0}
+  .mt-topic-grid,.mt-author-grid,.mt-review-grid{grid-template-columns:1fr}
+  .mt-stats{grid-template-columns:1fr 1fr}
+  .mt-search{display:none}
+  .mt-header-inner{gap:12px}
+  .mt-announce-inner{padding:7px 16px;font-size:12.5px}
+  .mt-announce-link{display:none}
+  .mt-footer-grid{grid-template-columns:1fr}
+  .mt-cta-bar{padding:26px 22px}
+  .mt-video-item{grid-template-columns:52px minmax(0,1fr);padding:14px}
+  .mt-video-num{width:44px;height:44px;font-size:16px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="mt-sticky-wrap">
+  <div class="mt-announce" role="complementary" aria-label="最新公告">
+    <div class="mt-announce-inner">
+      <span class="mt-announce-tag">NEW</span>
+      <p class="mt-announce-text">11·22 官方发布：纪录片《把日子过成小风景》第三集上线，同步开启「生活影像挑战赛」报名通道。</p>
+      <a class="mt-announce-link" href="#mt-news">查看全部更新</a>
+    </div>
+  </div>
+
+  <header class="mt-header">
+    <div class="mt-header-inner">
+      <a class="mt-brand" href="#mt-top-anchor" aria-label="muchi_tina 官方网站首页">
+        <span class="mt-brand-mark">M</span>
+        <span>
+          <span class="mt-brand-name">muchi_tina</span>
+          <span class="mt-brand-sub">Official Video Brand</span>
+        </span>
+      </a>
+      <nav class="mt-nav" id="mt-main-nav" aria-label="主导航">
+        <a href="#mt-feature">精选影像</a>
+        <a href="#mt-deep">品牌解析</a>
+        <a href="#mt-topics">专题企划</a>
+        <a href="#mt-authors">创作者</a>
+        <a href="#mt-reviews">社区口碑</a>
+        <a href="#mt-news">企业动态</a>
+      </nav>
+      <div class="mt-header-tools">
+        <div class="mt-search">
+          <label class="mt-sr-only" for="mt-search-input">搜索站内内容</label>
+          <input type="search" id="mt-search-input" placeholder="搜索影像 / 创作者 / 专题" autocomplete="off">
+          <button class="mt-search-btn" id="mt-search-btn" aria-label="搜索">🔍</button>
+          <div class="mt-search-hint" id="mt-search-hint" role="status"></div>
+        </div>
+        <a class="mt-btn mt-btn-primary" href="#mt-cta">加入社区</a>
+        <button class="mt-burger" id="mt-burger" aria-controls="mt-main-nav" aria-expanded="false" aria-label="展开导航">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="mt-top-anchor">
+
+  <!-- S2 品牌首屏 -->
+  <section class="mt-hero" aria-labelledby="mt-hero-title">
+    <div class="mt-shell mt-hero-grid">
+      <div>
+        <span class="mt-hero-eyebrow">官方网站 · 原创影像社区</span>
+        <h1 id="mt-hero-title">muchi_tina</h1>
+        <p class="mt-hero-lead">把日常拍成可以回看的风景，一个认真记录生活的原创视频品牌。</p>
+        <p class="mt-hero-desc">muchi_tina 官方网站由品牌内容团队持续运营，聚焦生活方式影像、手作与日常记录，为创作者与企业搭建高品质内容生态。我们坚持原创、正版、高清的内容标准，以真实与温暖为底色，让每一条视频都具备可被反复观看的品质。</p>
+        <div class="mt-hero-actions">
+          <a class="mt-btn mt-btn-primary" href="#mt-feature">观看精选影像</a>
+          <a class="mt-btn mt-btn-ghost" href="#mt-authors">认识创作者</a>
+          <a class="mt-btn mt-btn-sand" href="#mt-cta">投稿入口</a>
+        </div>
+        <div class="mt-stats">
+          <div class="mt-stat"><b data-count="1260">0</b><span>原创高清视频（条）</span></div>
+          <div class="mt-stat"><b data-count="86">0</b><span>签约创作者（位）</span></div>
+          <div class="mt-stat"><b data-count="420">0</b><span>社区活跃作者（万+）</span></div>
+        </div>
+      </div>
+      <div class="mt-hero-visual">
+        <div class="mt-hero-img">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f3e6cf'/%3E%3Cstop offset='.55' stop-color='%23e2b678'/%3E%3Cstop offset='1' stop-color='%232f6f6a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23sky)'/%3E%3Ccircle cx='300' cy='120' r='46' fill='%23fdf3dd' opacity='.92'/%3E%3Cpath d='M0 330 L90 250 L170 320 L240 230 L330 320 L400 260 L400 500 L0 500 Z' fill='%231f4a47' opacity='.85'/%3E%3Cpath d='M0 400 L80 340 L160 400 L260 320 L340 390 L400 350 L400 500 L0 500 Z' fill='%2316302e'/%3E%3Cg fill='%23f4e9d8' opacity='.9'%3E%3Crect x='40' y='430' width='26' height='40' rx='3'/%3E%3Crect x='78' y='445' width='20' height='25' rx='3'/%3E%3Crect x='300' y='425' width='30' height='45' rx='3'/%3E%3C/g%3E%3Cg stroke='%23f4e9d8' stroke-width='2' opacity='.7'%3E%3Cpath d='M120 460 q10 -22 20 0'/%3E%3Cpath d='M270 455 q10 -18 20 0'/%3E%3C/g%3E%3C/svg%3E"
+               alt="muchi_tina 品牌主视觉：暮色山峰与村落剪影的原创影像封面" width="400" height="500">
+        </div>
+        <div class="mt-hero-badge">
+          <span class="mt-play-dot">▶</span>
+          <span>
+            <b>本周主打</b>
+            <small>《把日子过成小风景》第三集</small>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 精选影像 -->
+  <section class="mt-section" id="mt-feature" aria-labelledby="mt-feature-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Featured Videos</p>
+        <h2 id="mt-feature-title">精选影像 · muchi_tina 官方高清视频内容</h2>
+        <p>由品牌原创团队与签约创作者共同产出，覆盖日常记录、手作教学、城市探索与人物访谈，每一条都经过内容品质审核。</p>
+      </div>
+
+      <div class="mt-video-wrap">
+        <article class="mt-video-feature">
+          <div class="mt-video-feature-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23f0e3cc'/%3E%3Crect x='0' y='0' width='640' height='150' fill='%23d9c3a0'/%3E%3Ccircle cx='540' cy='80' r='42' fill='%23fbf0d8'/%3E%3Crect x='60' y='170' width='180' height='120' rx='8' fill='%232f6f6a'/%3E%3Crect x='80' y='190' width='60' height='50' rx='4' fill='%23e8a33d' opacity='.9'/%3E%3Crect x='280' y='140' width='150' height='150' rx='10' fill='%231f4a47'/%3E%3Cg fill='%23f4e9d8'%3E%3Crect x='300' y='165' width='40' height='30' rx='3'/%3E%3Crect x='355' y='165' width='40' height='30' rx='3'/%3E%3Crect x='300' y='215' width='95' height='50' rx='3'/%3E%3C/g%3E%3Crect x='470' y='200' width='120' height='90' rx='8' fill='%23b07a63'/%3E%3Cpath d='M0 320 h640 v40 h-640z' fill='%2316302e'/%3E%3C/svg%3E"
+                 alt="《把日子过成小风景》第三集封面：黄昏下的木屋与窗前暖灯" width="640" height="360">
+            <span class="mt-play-float">▶ 12:46 · 高清</span>
+          </div>
+          <div class="mt-video-feature-body">
+            <span class="mt-tag">日常记录</span><span class="mt-tag">治愈影像</span>
+            <h3 class="mt-h3">把日子过成小风景 第三集：一间木屋的四季早餐</h3>
+            <p>跟着 muchi_tina 的镜头，看一位创作者如何在乡间木屋坚持四年做早餐。从选米、生火到摆盘，画面克制而温柔，被社区称为「最值得反复观看的清晨影像」。</p>
+            <div class="mt-meta">
+              <span>创作者：木迟 Tina</span><span>播放 128.4 万</span><span>点赞 8.6 万</span><span>收藏 3.2 万</span>
+            </div>
+            <div class="mt-actions">
+              <button class="mt-act" data-like="1284" aria-pressed="false">♡ 点赞 <em data-like-count>8.6 万</em></button>
+              <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              <button class="mt-act" data-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="mt-video-list">
+          <article class="mt-video-item">
+            <div class="mt-video-num">01</div>
+            <div>
+              <h3>手作教程：用旧木料做一盏小夜灯</h3>
+              <p>从拆解旧家具到打磨上蜡，完整记录一盏夜灯在三个周末里被做出来的过程，包含工具清单与常见失误提醒。</p>
+              <div class="mt-meta"><span class="mt-tag">手作DIY</span><span>作者：阿措</span><span>播放 46.2 万</span><span>点赞 2.1 万</span></div>
+              <div class="mt-actions">
+                <button class="mt-act" data-like="960" aria-pressed="false">♡ 点赞</button>
+                <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-video-item">
+            <div class="mt-video-num">02</div>
+            <div>
+              <h3>行业观察：生活类短视频为什么重新变长了</h3>
+              <p>从平台分发机制到用户观看耐心，梳理近两年内容时长回升的四个原因，并给出创作者可执行的选题建议。</p>
+              <div class="mt-meta"><span class="mt-tag">行业观察</span><span>作者：陈默然</span><span>播放 38.7 万</span><span>点赞 1.6 万</span></div>
+              <div class="mt-actions">
+                <button class="mt-act" data-like="820" aria-pressed="false">♡ 点赞</button>
+                <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-video-item">
+            <div class="mt-video-num">03</div>
+            <div>
+              <h3>城市探索：在旧工业区找一间只开半天的书店</h3>
+              <p>镜头跟随店主穿过厂房与铁轨，讲述她把仓库改成阅读空间的故事，附周边步行动线与到访建议。</p>
+              <div class="mt-meta"><span class="mt-tag">城市探索</span><span>作者：林野</span><span>播放 31.5 万</span><span>点赞 1.3 万</span></div>
+              <div class="mt-actions">
+                <button class="mt-act" data-like="700" aria-pressed="false">♡ 点赞</button>
+                <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-video-item">
+            <div class="mt-video-num">04</div>
+            <div>
+              <h3>人物访谈：做了十年家务影像的摄影师在想什么</h3>
+              <p>一场长达两小时的访谈节选，谈为什么不拍宏大场面，只拍洗碗、晾衣与叠被子这些被忽略的动作。</p>
+              <div class="mt-meta"><span class="mt-tag">人物访谈</span><span>作者：木迟 Tina</span><span>播放 27.9 万</span><span>点赞 1.1 万</span></div>
+              <div class="mt-actions">
+                <button class="mt-act" data-like="640" aria-pressed="false">♡ 点赞</button>
+                <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="mt-video-item">
+            <div class="mt-video-num">05</div>
+            <div>
+              <h3>实用技巧：三脚架之外，手机也能拍出稳定空镜</h3>
+              <p>用一个靠垫、一面墙和一段窗台，讲清低速快门下如何获得稳定画面，适合刚起步的社区创作者。</p>
+              <div class="mt-meta"><span class="mt-tag">实用技巧</span><span>作者：阿措</span><span>播放 22.3 万</span><span>点赞 9,800</span></div>
+              <div class="mt-actions">
+                <button class="mt-act" data-like="520" aria-pressed="false">♡ 点赞</button>
+                <button class="mt-act" data-fav aria-pressed="false">☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析 800字以上 -->
+  <section class="mt-section" id="mt-deep" aria-labelledby="mt-deep-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Brand Insight</p>
+        <h2 id="mt-deep-title">深度解析 muchi_tina：一个视频品牌如何把日常做成内容生态</h2>
+        <p>超过八百字的品牌与行业解析，讲清楚我们在做什么、为什么这样做，以及它如何影响创作者社区。</p>
+      </div>
+
+      <div class="mt-deep-intro">
+        <div>
+          <h3 class="mt-h3">从一个人的拍摄习惯，长成一个可持续运营的官方平台</h3>
+          <p>muchi_tina 最早只是一个人在周末拍摄的影像集：清晨的窗、晾在阳台上的衬衫、锅里咕嘟的汤。它没有宏大场面，也没有刻意设计的戏剧冲突，却在社区里被反复转发。原因并不复杂——当绝大多数内容都在追求更强的刺激时，安静记录本身反而成了一种稀缺资源。企业化运营之后，我们保留了这种克制，把它变成一套可以复用的内容方法：选题来自真实生活，剪辑服务于观看节奏，发布遵循稳定的更新周期。</p>
+          <p>作为官方网站，这里承担的不只是展示功能。它是品牌故事的存放地，也是创作者进入社区的入口。我们把内容分成三条稳定的线：记录线、方法线与访谈线。记录线讲“发生了什么”，方法线讲“怎么做到”，访谈线讲“为什么这样做”。三条线互相支撑，形成一个不依赖单条爆款的持续内容生态。这也是我们反复强调“持续运营”的原因：内容品质来自长期训练，而非一次运气。</p>
+        </div>
+        <figure class="mt-deep-figure">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 360'%3E%3Crect width='480' height='360' fill='%23e8efed'/%3E%3Crect x='0' y='240' width='480' height='120' fill='%23cfe0dc'/%3E%3Crect x='70' y='70' width='150' height='170' rx='6' fill='%232f6f6a'/%3E%3Crect x='90' y='92' width='110' height='70' rx='3' fill='%23f4e9d8'/%3E%3Crect x='250' y='110' width='160' height='130' rx='6' fill='%231f4a47'/%3E%3Cg fill='%23e8a33d'%3E%3Ccircle cx='300' cy='150' r='14'/%3E%3Ccircle cx='350' cy='150' r='14'/%3E%3C/g%3E%3Cpath d='M250 240 h160 v14 h-160z' fill='%237a4b3a'/%3E%3Cg stroke='%232f6f6a' stroke-width='3' fill='none'%3E%3Cpath d='M60 300 q40 -50 80 0'/%3E%3Cpath d='M340 300 q40 -50 80 0'/%3E%3C/g%3E%3C/svg%3E"
+               alt="muchi_tina 品牌解析配图：书房影像工作站与手写脚本示意" width="480" height="360">
+          <figcaption>官方内容工作台：从脚本卡片到画面调色的完整流程</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-deep-cols">
+        <div class="mt-deep-block">
+          <h3 class="mt-h3">内容标准：为什么我们坚持原创、正版与高清</h3>
+          <p>在 muchi_tina 的内容规范里，原创不是一句口号，而是具体到素材来源的流程要求。每一条上线的视频都要登记拍摄地、出镜人授权与音乐版权，素材库中的每一段空镜都标注拍摄时间与设备。我们相信，正版使用是品牌能够长期存在的前提，也是社区创作者被尊重的基础。</p>
+          <p>高清同样不是参数炫耀。生活类影像大量依赖细节，布料的褶皱、蒸汽的形状、光线落在桌面上的边缘，这些都需要足够的清晰度才能被看见。因此官方发布的内容默认提供高清版本，并保留原始色彩，不做过度滤镜处理。品质感来自如实呈现，而不是修饰。</p>
+          <p>这套标准也影响到了社区投稿：我们提供一份公开的拍摄清单，说明景别、时长、声音采集与字幕规范。投稿者按清单执行，通过率明显提高。对平台来说，这是效率；对创作者来说，这是可学习的成长路径。</p>
+        </div>
+        <div class="mt-deep-block">
+          <h3 class="mt-h3">社区温度：从观看者到共创者的那条路径</h3>
+          <p>一个视频社区最怕的不是内容少，而是关系断裂。观看者看完就走，创作者得不到反馈，平台只能靠算法不断推送更强的刺激。muchi_tina 的做法是把反馈做得具体：评论可附时间点，收藏可写备注，创作者每月会挑选十条带时间点的评论做公开回应。这样一来，评论区不再只是情绪出口，而变成了内容改进的协作现场。</p>
+          <p>我们也把“陪伴”落到了更新节奏上。固定栏目每周二与周五更新，专题按月推进，长期企划按季度公布进度。观众会知道什么时候能等到下一集，创作者也知道自己的内容被安排在什么位置。这种可预期的节奏，是社区持续活跃的真正来源。</p>
+          <p>从数据上看，社区里超过六成的投稿来自观看超过半年的老用户。这意味着内容生态已经形成了内部循环：看久了想拍，拍了被看见，被看见后继续拍。对一家视频品牌来说，这比任何单条爆款都更值得信赖。</p>
+        </div>
+        <div class="mt-deep-block">
+          <h3 class="mt-h3">行业位置：垂直领域里做深，比做大更重要</h3>
+          <p>生活影像是一个看起来门槛很低的品类，实际竞争非常密集。muchi_tina 选择的是做深而不是做大：我们不追逐所有热门题材，只围绕日常、手作、城市与人物四条线持续积累。深耕带来的好处是判断力——什么选题值得拍，什么画面必须重拍，什么样的剪辑节奏会让观众愿意停留，这些问题在长期实践中逐渐有了稳定答案。</p>
+          <p>行业内常见的问题是内容同质化。解决它的方式不是换滤镜，而是换观察角度。同样是拍早餐，我们从食材采购的清晨市场拍起；同样是拍手作，我们把失败的三次过程完整保留。多元的表达来自真实的过程，而不是包装的差异。这也是我们持续鼓励创作者上传“未完成”作品的原因。</p>
+          <p>面向未来，我们希望 muchi_tina 成为生活影像领域的用户首选平台之一，但这不依靠规模扩张，而依靠口碑积累。每一条被认真看完的视频，每一次被认真回复的评论，都是品牌影响力的一部分。</p>
+        </div>
+        <div class="mt-deep-block">
+          <h3 class="mt-h3">社会责任：让记录这件事对真实世界有正面作用</h3>
+          <p>影像有放大作用。它放大美好，也可能放大误解。因此在涉及个人故事、未成年人出镜与地方文化呈现时，我们有一套明确的审核原则：必须取得知情同意，必须保留语境，不以猎奇方式剪辑。这些原则会拖慢更新速度，但它是企业应当承担的责任。</p>
+          <p>我们还与地方手工艺人合作，免费为其拍摄技艺记录短片，并将素材回赠给对方使用。这些片子播放量不算高，却是品牌故事中最有分量的部分。匠心不该只出现在宣传语里，它需要被真实地看见、被完整地保存。</p>
+          <p>包容与多元同样是我们的基本立场。社区里有全职创作者，也有下班后拍摄的上班族；有专业设备，也有一部手机。我们不以外在条件评判作品，只看内容是否真诚、是否清晰、是否值得被更多人看到。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="mt-section" id="mt-topics" aria-labelledby="mt-topics-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Editorial Projects</p>
+        <h2 id="mt-topics-title">专题企划 · muchi_tina 官方精品内容计划</h2>
+        <p>按月推进的长期企划，每一档专题都有明确的更新状态与内容目录，观众可以持续追更。</p>
+      </div>
+      <div class="mt-topic-grid">
+        <article class="mt-topic">
+          <div class="mt-topic-head">
+            <h3>把日子过成小风景</h3>
+            <p>四季生活影像纪录，一年十二集，拍摄不同家庭的日常片段。</p>
+            <span class="mt-topic-status">更新中 · 第 3 集已上线</span>
+          </div>
+          <ul class="mt-topic-list">
+            <li><span>01</span>春分：一间厨房的早晨六点</li>
+            <li><span>02</span>夏至：阳台上的晾晒与风</li>
+            <li><span>03</span>秋分：木屋里的四季早餐</li>
+          </ul>
+        </article>
+        <article class="mt-topic">
+          <div class="mt-topic-head">
+            <h3>手上功夫</h3>
+            <p>手作与匠人技艺系列，记录从材料到成品的完整过程。</p>
+            <span class="mt-topic-status">更新中 · 已发布 9 集</span>
+          </div>
+          <ul class="mt-topic-list">
+            <li><span>01</span>旧木料变成一盏夜灯</li>
+            <li><span>02</span>一只陶杯的七次失败</li>
+            <li><span>03</span>缝补：把破洞绣成一朵花</li>
+          </ul>
+        </article>
+        <article class="mt-topic">
+          <div class="mt-topic-head">
+            <h3>城市慢半拍</h3>
+            <p>城市探索企划，走进被忽略的街区、店铺与普通人。</p>
+            <span class="mt-topic-status">筹拍中 · 12 月启动</span>
+          </div>
+          <ul class="mt-topic-list">
+            <li><span>01</span>只开半天的工业区书店</li>
+            <li><span>02</span>凌晨四点的豆浆铺</li>
+            <li><span>03</span>一条即将改造的老街</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作者矩阵 -->
+  <section class="mt-section" id="mt-authors" aria-labelledby="mt-authors-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Creators</p>
+        <h2 id="mt-authors-title">创作者矩阵 · muchi_tina 社区的核心力量</h2>
+        <p>签约与社区创作者共同构成内容生态，每位作者都有清晰的擅长领域与持续更新记录。</p>
+      </div>
+      <div class="mt-author-grid">
+        <article class="mt-author">
+          <div class="mt-avatar a1">木</div>
+          <div>
+            <p class="mt-author-name">木迟 Tina <span class="mt-author-field">日常记录</span></p>
+            <p class="mt-author-nums"><span>作品 218</span><span>粉丝 96.4 万</span></p>
+            <p class="mt-author-bio">muchi_tina 品牌创始人之一，长期拍摄家庭日常与四季变化。习惯用固定机位与自然光，主张让画面保持原本的呼吸感。近两年专注长片记录，作品被多个高校影像课程引用。</p>
+            <a class="mt-author-more" href="#mt-feature">查看作品 →</a>
+          </div>
+        </article>
+        <article class="mt-author">
+          <div class="mt-avatar a2">阿</div>
+          <div>
+            <p class="mt-author-name">阿措 <span class="mt-author-field">手作DIY</span></p>
+            <p class="mt-author-nums"><span>作品 143</span><span>粉丝 52.8 万</span></p>
+            <p class="mt-author-bio">木工与旧物改造创作者，擅长把失败过程也拍进视频。认为教程的价值在于让人敢于动手，而不是展示完美成品。每期结尾固定回答三条社区提问，被观众称为“最耐心的手作老师”。</p>
+            <a class="mt-author-more" href="#mt-feature">查看作品 →</a>
+          </div>
+        </article>
+        <article class="mt-author">
+          <div class="mt-avatar a3">陈</div>
+          <div>
+            <p class="mt-author-name">陈默然 <span class="mt-author-field">行业观察</span></p>
+            <p class="mt-author-nums"><span>作品 97</span><span>粉丝 31.2 万</span></p>
+            <p class="mt-author-bio">内容行业观察者，前媒体编辑。擅长把平台规则翻译成创作者能直接执行的动作清单，视频以信息密度高、结论明确著称。每月发布一份内容趋势简报，社区常作为选题参考。</p>
+            <a class="mt-author-more" href="#mt-feature">查看作品 →</a>
+          </div>
+        </article>
+        <article class="mt-author">
+          <div class="mt-avatar a4">林</div>
+          <div>
+            <p class="mt-author-name">林野 <span class="mt-author-field">城市探索</span></p>
+            <p class="mt-author-nums"><span>作品 126</span><span>粉丝 44.6 万</span></p>
+            <p class="mt-author-bio">城市影像作者，常年带着相机步行拍摄旧街区与店铺。镜头安静，几乎不打扰被拍摄者，擅长用环境声完成叙事。作品常附步行动线与到访建议，被当作城市漫游攻略收藏。</p>
+            <a class="mt-author-more" href="#mt-feature">查看作品 →</a>
+          </div>
+        </article>
+        <article class="mt-author">
+          <div class="mt-avatar a5">苏</div>
+          <div>
+            <p class="mt-author-name">苏禾 <span class="mt-author-field">美食烹饪</span></p>
+            <p class="mt-author-nums"><span>作品 88</span><span>粉丝 27.9 万</span></p>
+            <p class="mt-author-bio">家庭料理创作者，专注一人食与季节食材。视频节奏偏慢，保留切菜与锅气的声音，不配音。主张“厨房不需要表演”，每集只做一道菜，把步骤讲清楚，也把失误讲清楚。</p>
+            <a class="mt-author-more" href="#mt-feature">查看作品 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口碑 + 榜单 -->
+  <section class="mt-section" id="mt-reviews" aria-labelledby="mt-reviews-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Community Voice</p>
+        <h2 id="mt-reviews-title">社区口碑 · muchi_tina 用户评价与内容榜单</h2>
+        <p>来自真实观众与创作者的评价，以及官方整理的月度榜单，帮助你快速找到值得观看的内容。</p>
+      </div>
+
+      <div class="mt-review-grid" style="margin-bottom:34px">
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a1">金</div><div><b>金山路 12 号</b><small>观看 2 年 · 社区创作者</small></div></div>
+          <p>看了半年的日常记录后，我第一次拿起手机拍了自家的早餐。投稿前照着官方拍摄清单改了三遍，居然一次就通过了。这个社区最难得的是愿意教人怎么拍，而不是只展示结果。</p>
+          <p class="mt-review-score">★★★★★</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a2">阿</div><div><b>阿鹿</b><small>观看 8 个月</small></div></div>
+          <p>《把日子过成小风景》我反复看了四遍。它没有讲什么大道理，但那种“日子值得慢慢过”的感觉很真实。唯一的建议是希望更新再快一点，等一集真的等得有点久。</p>
+          <p class="mt-review-score">★★★★☆</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a3">周</div><div><b>周行的相机</b><small>观看 1 年半 · 摄影爱好者</small></div></div>
+          <p>高清版本很扎实，色彩没有过度处理，暗部还能看到细节。作为摄影爱好者，我很喜欢这种克制的调色，能学到东西。希望以后能出调色思路的幕后内容。</p>
+          <p class="mt-review-score">★★★★★</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a4">小</div><div><b>小满</b><small>观看 5 个月</small></div></div>
+          <p>评论区能带时间点回复这一点特别好，创作者真的会回。我问过一个关于机位的问题，第二天就收到了详细说明，还附了示意图。很少见到这么认真运营评论区的平台。</p>
+          <p class="mt-review-score">★★★★★</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a5">夏</div><div><b>夏天的阳台</b><small>观看 3 年 · 老用户</small></div></div>
+          <p>整体很稳，但我觉得专题企划可以再多一些手作向的内容，现在的比例偏生活记录。另外移动端有些长标题会挤，建议检查一下排版细节。</p>
+          <p class="mt-review-score">★★★☆☆</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a1">木</div><div><b>木讷的猫</b><small>观看 11 个月</small></div></div>
+          <p>我是被行业观察那条视频吸引进来的，结果一路看完手作系列。信息讲得清楚、没有废话，这在现在的短视频里太少见。希望趋势简报能做成公开可下载的版本。</p>
+          <p class="mt-review-score">★★★★☆</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a2">程</div><div><b>程一</b><small>观看 7 个月 · 独立创作者</small></div></div>
+          <p>投稿页面流程很顺，授权说明写得明白，不用反复问。作为独立创作者，我最看重版权边界，这一点 muchi_tina 做得很规范，让人放心把作品交上来。</p>
+          <p class="mt-review-score">★★★★★</p>
+        </article>
+        <article class="mt-review">
+          <div class="mt-review-head"><div class="mt-avatar a3">于</div><div><b>于桥</b><small>观看 4 个月</small></div></div>
+          <p>城市探索系列让我发现住了十年的城市还有那么多没去过的地方。附的步行路线很实用，我照着走了一整天。希望后面能多一点小城市的选题。</p>
+          <p class="mt-review-score">★★★★☆</p>
+        </article>
+      </div>
+
+      <div class="mt-rank-grid">
+        <div class="mt-rank">
+          <h3>本月热度榜</h3>
+          <ol>
+            <li><b>把日子过成小风景 第三集</b><em>128.4 万</em></li>
+            <li><b>旧木料做一盏小夜灯</b><em>46.2 万</em></li>
+            <li><b>生活类短视频为什么变长</b><em>38.7 万</em></li>
+            <li><b>只开半天的工业区书店</b><em>31.5 万</em></li>
+          </ol>
+        </div>
+        <div class="mt-rank">
+          <h3>口碑榜</h3>
+          <ol>
+            <li><b>手上功夫：一只陶杯的七次失败</b><em>4.9</em></li>
+            <li><b>把日子过成小风景 第二集</b><em>4.8</em></li>
+            <li><b>十年家务影像摄影访谈</b><em>4.8</em></li>
+            <li><b>手机拍出稳定空镜</b><em>4.7</em></li>
+          </ol>
+        </div>
+        <div class="mt-rank">
+          <h3>新人榜</h3>
+          <ol>
+            <li><b>苏禾 · 一人食的四季</b><em>+9.2 万</em></li>
+            <li><b>禾下土 · 菜园记录</b><em>+6.8 万</em></li>
+            <li><b>白露 · 阳台植物日记</b><em>+5.4 万</em></li>
+            <li><b>顾南 · 老屋修缮手记</b><em>+4.1 万</em></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + FAQ -->
+  <section class="mt-section" id="mt-news" aria-labelledby="mt-news-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">News &amp; Help</p>
+        <h2 id="mt-news-title">企业动态与常见问题 · muchi_tina 官方发布</h2>
+        <p>品牌资讯、内容更新与投稿常见问题，都在这里集中公布。</p>
+      </div>
+
+      <div class="mt-two-col">
+        <div>
+          <h3 class="mt-h3" style="margin-bottom:14px">最新企业动态</h3>
+          <div class="mt-news">
+            <div class="mt-news-item">
+              <span class="mt-news-date">11·22<br>2026</span>
+              <div>
+                <b>《把日子过成小风景》第三集正式上线</b>
+                <p>同步开放「生活影像挑战赛」报名，投稿截止 12 月 20 日，优秀作品将进入官方专题推荐位。</p>
+              </div>
+            </div>
+            <div class="mt-news-item">
+              <span class="mt-news-date">11·15<br>2026</span>
+              <div>
+                <b>官方拍摄清单更新至 2.1 版</b>
+                <p>新增声音采集与字幕规范说明，投稿通过率在测试阶段提升约两成。</p>
+              </div>
+            </div>
+            <div class="mt-news-item">
+              <span class="mt-news-date">11·08<br>2026</span>
+              <div>
+                <b>城市慢半拍企划启动招募</b>
+                <p>面向社区征集城市影像线索，入选创作者将获得官方设备支持与联合署名。</p>
+              </div>
+            </div>
+            <div class="mt-news-item">
+              <span class="mt-news-date">10·30<br>2026</span>
+              <div>
+                <b>与三家地方手工艺工作室达成合作</b>
+                <p>将为传统技艺提供免费记录短片拍摄，素材同步回赠合作方使用。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="mt-h3" style="margin-bottom:14px">常见问题</h3>
+          <div class="mt-faq">
+            <details>
+              <summary>如何向 muchi_tina 投稿？</summary>
+              <p>在页面底部点击「投稿入口」，填写作品标题、简介与成片链接，并上传素材授权说明。审核周期通常为 5 至 7 个工作日，通过后会收到官方通知邮件。</p>
+            </details>
+            <details>
+              <summary>投稿对画质有硬性要求吗？</summary>
+              <p>官方发布推荐 1080P 及以上，但不强制设备。我们更看重内容是否清晰真诚。手机拍摄只要画面稳定、声音干净、字幕准确，同样有机会进入精选。</p>
+            </details>
+            <details>
+              <summary>作品的版权归属如何约定？</summary>
+              <p>创作者保留作品著作权，平台获得在官方网站与官方账号展示的非独家授权。授权范围、期限与撤销方式均在投稿协议中逐条列明，不做模糊表述。</p>
+            </details>
+            <details>
+              <summary>专题企划多久更新一次？</summary>
+              <p>固定栏目每周二、周五更新；专题按月度推进，季度企划会在企业动态中公布进度。若遇拍摄条件变化导致延期，会提前在公告条说明。</p>
+            </details>
+            <details>
+              <summary>可以申请加入签约创作者计划吗？</summary>
+              <p>可以。近半年内有 3 条以上作品进入精选的社区作者，可在个人中心提交申请。签约后享有选题支持、设备借用与联合出品机会。</p>
+            </details>
+            <details>
+              <summary>如何反馈内容问题或提出建议？</summary>
+              <p>每条视频下方均有「反馈」入口，也可在评论区带时间点留言。涉及版权或隐私的问题会优先处理，通常在 48 小时内给出答复。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作 + 投稿 -->
+  <section class="mt-section" id="mt-cta" aria-labelledby="mt-cta-title">
+    <div class="mt-shell">
+      <div class="mt-section-head">
+        <p class="mt-section-kicker">Partners &amp; Join</p>
+        <h2 id="mt-cta-title">合作伙伴与创作入口 · muchi_tina 官方社区</h2>
+        <p>我们与内容平台、设备品牌与地方文化机构持续合作，共同推动生活影像的多元表达。</p>
+      </div>
+
+      <div class="mt-partner-row">
+        <div class="mt-partner">光野影像器材<small>设备支持伙伴</small></div>
+        <div class="mt-partner">拾光书店联盟<small>线下放映合作</small></div>
+        <div class="mt-partner">本木手工艺工作室<small>技艺记录合作</small></div>
+        <div class="mt-partner">南岸文化基金会<small>公益影像支持</small></div>
+        <div class="mt-partner">慢岛民宿<small>拍摄场地合作</small></div>
+        <div class="mt-partner">云岚音频<small>声音制作支持</small></div>
+      </div>
+
+      <div class="mt-cta-bar">
+        <div>
+          <h3>把你的日常交给镜头</h3>
+          <p>无论你用的是相机还是手机，只要内容真实、表达清楚，muchi_tina 都欢迎你上传作品。加入社区，参与挑战、投票与月度专题，和八十六位签约创作者一同成长。</p>
+        </div>
+        <div class="mt-cta-actions">
+          <button class="mt-btn mt-btn-sand" id="mt-open-submit">我要投稿</button>
+          <button class="mt-btn mt-btn-ghost" id="mt-copy-link" style="border-color:rgba(244,233,216,.8);color:#f4e9d8">复制官网链接</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-footer">
+  <div class="mt-shell">
+    <div class="mt-footer-grid">
+      <div>
+        <div class="mt-footer-brand">
+          <span class="mt-brand-mark">M</span>
+          <b>muchi_tina</b>
+        </div>
+        <p>muchi_tina 官方网站 · 原创生活影像品牌。我们持续运营高品质内容生态，坚持原创、正版与高清标准，为创作者与企业提供值得信赖的视频内容平台。</p>
+      </div>
+      <div>
+        <h4>内容板块</h4>
+        <ul>
+          <li><a href="#mt-feature">精选影像</a></li>
+          <li><a href="#mt-topics">专题企划</a></li>
+          <li><a href="#mt-authors">创作者矩阵</a></li>
+          <li><a href="#mt-reviews">社区口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#mt-deep">品牌解析</a></li>
+          <li><a href="#mt-news">企业动态</a></li>
+          <li><a href="#mt-cta">合作与投稿</a></li>
+          <li><a href="#mt-news">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系社区</h4>
+        <ul>
+          <li>内容合作：official@muchi-tina.example</li>
+          <li>投稿咨询：submit@muchi-tina.example</li>
+          <li>工作时间：周一至周五 10:00–19:00</li>
+          <li>办公地址：南岸文化创意园 3 号楼</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-footer-bottom">
+      <span>© 2026 muchi_tina 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：粤ICP备 2026088601 号 · 网络文化经营许可</span>
+    </div>
+  </div>
+</footer>
+
+<button class="mt-top" id="mt-backtop" aria-label="回到顶部">↑</button>
+
+<div class="mt-modal" id="mt-modal" role="dialog" aria-modal="true" aria-labelledby="mt-modal-title">
+  <div class="mt-modal-box">
+    <button class="mt-modal-close" id="mt-modal-close" aria-label="关闭">×</button>
+    <h3 id="mt-modal-title">投稿入口</h3>
+    <p>填写作品基本信息，官方内容团队将在 5 至 7 个工作日内回复审核结果。</p>
+    <input type="text" id="mt-submit-title" placeholder="作品标题" aria-label="作品标题">
+    <input type="text" id="mt-submit-author" placeholder="创作者昵称" aria-label="创作者昵称">
+    <textarea id="mt-submit-desc" rows="3" placeholder="一句话介绍你的作品与拍摄缘起" aria-label="作品介绍"></textarea>
+    <button class="mt-btn mt-btn-primary" id="mt-submit-send" style="width:100%">提交作品</button>
+  </div>
+</div>
+
+<div class="mt-toast" id="mt-toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('mt-burger');
+  var nav = document.getElementById('mt-main-nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('mt-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('mt-search-input');
+  var searchBtn = document.getElementById('mt-search-btn');
+  var hint = document.getElementById('mt-search-hint');
+  var pool = [
+    {t:'把日子过成小风景 第三集', a:'#mt-feature'},
+    {t:'手作教程：旧木料小夜灯', a:'#mt-feature'},
+    {t:'生活类短视频为什么变长', a:'#mt-feature'},
+    {t:'城市探索：工业区书店', a:'#mt-feature'},
+    {t:'创作者 木迟 Tina', a:'#mt-authors'},
+    {t:'创作者 阿措', a:'#mt-authors'},
+    {t:'专题 手上功夫', a:'#mt-topics'},
+    {t:'投稿入口与版权说明', a:'#mt-cta'},
+    {t:'企业动态与常见问题', a:'#mt-news'}
+  ];
+  function renderHint(kw){
+    kw = (kw || '').trim().toLowerCase();
+    if(!kw){
+      hint.classList.remove('open');
+      hint.innerHTML = '';
+      return;
+    }
+    var hits = pool.filter(function(x){ return x.t.toLowerCase().indexOf(kw) > -1; });
+    if(!hits.length){
+      hint.innerHTML = '<p class="mt-hint-empty">暂无匹配内容，试试「手作」「城市」或「投稿」。</p>';
+    }else{
+      hint.innerHTML = hits.slice(0,5).map(function(x){
+        return '<p data-jump="' + x.a + '">' + x.t + '</p>';
+      }).join('');
+    }
+    hint.classList.add('open');
+  }
+  function doSearch(){
+    var kw = searchInput.value.trim();
+    if(!kw){ showToast('请输入搜索关键词'); return; }
+    renderHint(kw);
+    var first = hint.querySelector('p:not(.mt-hint-empty)');
+    if(first){ showToast('已为你匹配相关内容'); }
+    else { showToast('暂无匹配，换个关键词试试'); }
+  }
+  searchInput.addEventListener('input', function(){ renderHint(searchInput.value); });
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  searchBtn.addEventListener('click', doSearch);
+  hint.addEventListener('click', function(e){
+    var p = e.target.closest('p[data-jump]');
+    if(p){
+      var target = document.querySelector(p.getAttribute('data-jump'));
+      if(target){ target.scrollIntoView({behavior:'smooth'}); }
+      hint.classList.remove('open');
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.mt-search')){ hint.classList.remove('open'); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('on');
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var icon = on ? '♥' : '♡';
+      var label = btn.querySelector('em');
+      if(label){ btn.firstChild.nodeValue = icon + ' 已赞 '; }
+      else { btn.firstChild.nodeValue = icon + ' 点赞'; }
+      showToast(on ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('[data-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('on');
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.firstChild.nodeValue = on ? '★ 已收藏' : '☆ 收藏';
+      showToast(on ? '已加入收藏' : '已移出收藏');
+    });
+  });
+
+  /* ---------- 分享：复制链接 ---------- */
+  function copyLink(text, okMsg){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ showToast(okMsg); }, function(){ fallbackCopy(text, okMsg); });
+    }else{
+      fallbackCopy(text, okMsg);
+    }
+  }
+  function fallbackCopy(text, okMsg){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast(okMsg);
+    }catch(err){ showToast('复制失败，请手动选择复制'); }
+  }
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyLink('muchi_tina 官方网站 · 精选影像《把日子过成小风景》第三集', '链接已复制，可分享给朋友');
+    });
+  });
+  var copyBtn = document.getElementById('mt-copy-link');
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      copyLink('muchi_tina 官方网站 · 原创生活影像品牌', '官网链接已复制');
+    });
+  }
+
+  /* ---------- 投稿弹窗 ---------- */
+  var modal = document.getElementById('mt-modal');
+  var openSubmit = document.getElementById('mt-open-submit');
+  var closeModal = document.getElementById('mt-modal-close');
+  var sendBtn = document.getElementById('mt-submit-send');
+  function openModal(){ modal.classList.add('open'); document.getElementById('mt-submit-title').focus(); }
+  function closeModalFn(){ modal.classList.remove('open'); }
+  if(openSubmit){ openSubmit.addEventListener('click', openModal); }
+  if(closeModal){ closeModal.addEventListener('click', closeModalFn); }
+  modal.addEventListener('click', function(e){ if(e.target === modal){ closeModalFn(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeModalFn(); } });
+  if(sendBtn){
+    sendBtn.addEventListener('click', function(){
+      var t = document.getElementById('mt-submit-title').value.trim();
+      var a = document.getElementById('mt-submit-author').value.trim();
+      if(!t || !a){ showToast('请填写作品标题与创作者昵称'); return; }
+      document.getElementById('mt-submit-title').value = '';
+      document.getElementById('mt-submit-author').value = '';
+      document.getElementById('mt-submit-desc').value = '';
+      closeModalFn();
+      showToast('投稿已提交，官方团队将尽快审核');
+    });
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var counters = document.querySelectorAll('[data-count]');
+  var counted = false;
+  function runCounters(){
+    if(counted) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var start = performance.now();
+      var dur = 1200;
+      function step(now){
+        var p = Math.min(1, (now - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('zh-CN');
+        if(p < 1){ requestAnimationFrame(step); }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsBox = document.querySelector('.mt-stats');
+  if('IntersectionObserver' in window && statsBox){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ runCounters(); io.disconnect(); } });
+    }, {threshold:.35});
+    io.observe(statsBox);
+  }else{
+    runCounters();
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var backtop = document.getElementById('mt-backtop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ backtop.classList.add('show'); }
+    else { backtop.classList.remove('show'); }
+  }, {passive:true});
+  backtop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+  </html>
